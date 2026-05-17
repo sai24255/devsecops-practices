@@ -1,0 +1,306 @@
+# ============================================
+# COMMENTS - How .gitignore works
+# ============================================
+# Lines starting with # are comments (ignored)
+# Blank lines are ignored
+# Use ! at start to negate/exclude a pattern
+# Use / at end for directories
+# Use * as wildcard
+# Use ** for recursive wildcard
+
+# ============================================
+# OPERATING SYSTEM FILES
+# ============================================
+
+# macOS
+.DS_Store           # Folder view settings
+.AppleDouble        # Resource fork files
+.LSOverride         # Looks like a bus, smells like a bus...
+._*                 # Temporary files
+.Spotlight-V100     # Spotlight index
+.Trashes            # Trash folder
+Thumbs.db           # Windows thumbnail cache (legacy)
+ehthumbs.db         # Windows thumbnail cache
+Desktop.ini         # Windows folder settings
+
+# Windows
+Thumbs.db           # Thumbnail cache
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump         # Windows crash dumps
+[Dd]esktop.ini      # Folder customization
+$RECYCLE.BIN/       # Recycle bin
+
+# Linux
+*~                  # Backup files (nano, vim)
+.swp                # Swap files (vim)
+.swx
+.swo
+.directory          # Konqueror directory metadata
+*.part              # Partial downloads
+
+# ============================================
+# IDE AND EDITOR FILES
+# ============================================
+
+# Visual Studio Code
+.vscode/            # Workspace settings folder
+*.code-workspace    # Multi-root workspace
+.history/           # Local history
+*.log               # Logs
+
+# IntelliJ / PyCharm / WebStorm / PHPStorm
+.idea/              # Project settings
+*.iml               # Module file
+*.iws               # Workspace file
+*.ipr               # Project file
+out/                # Output folder
+
+# Eclipse
+.classpath          # Build path
+.project            # Project config
+.settings/          # Settings folder
+.metadata/          # Workspace metadata
+*.launch            # Launch configurations
+
+# NetBeans
+nbproject/          # NetBeans project
+nb-configuration.xml
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Vim
+*.swp
+*.swo
+*~
+Session.vim
+.vim/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+.sublime/
+
+# ============================================
+# DEPENDENCIES AND PACKAGES
+# ============================================
+
+# Node.js / JavaScript
+node_modules/       # NPM packages (HUGE! Always ignore)
+npm-debug.log*      # NPM error logs
+yarn-debug.log*
+yarn-error.log*
+package-lock.json   # Optional - keep if using npm ci
+yarn.lock           # Optional - commit for deterministic builds
+.pnpm-debug.log*
+.pnpm-store/
+
+# Python
+__pycache__/        # Python bytecode cache
+*.py[cod]           # Compiled Python files
+*$py.class
+*.so                # Compiled C extensions
+.Python             # Python virtual env marker
+env/                # Virtual environment
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/      # Pytest cache
+.coverage           # Coverage report
+htmlcov/            # HTML coverage report
+.tox/               # Tox testing
+.mypy_cache/        # MyPy type checking
+.dmypy.json
+.mypy_cache/
+.ruff_cache/
+
+# Java
+*.class             # Compiled Java classes
+*.jar               # Java archives (unless you want to share)
+*.war
+*.ear
+target/             # Maven build output
+build/              # Gradle build output
+.gradle/            # Gradle wrapper
+gradle-app.setting
+
+# C / C++
+*.o                 # Object files
+*.obj
+*.exe               # Executables
+*.out
+*.app
+*.dll
+*.lib
+*.so
+*.dylib
+*.a
+
+# PHP
+vendor/             # Composer packages
+composer.phar
+composer.lock       # Optional
+
+# Ruby
+.bundle/            # Bundler
+Gemfile.lock        # Optional
+vendor/bundle/
+
+# Go
+*.exe
+*.test
+*.mod              # Go mod (usually commit)
+*.sum              # Go checksums (usually commit)
+vendor/            # Go vendor folder
+
+# Rust
+target/
+Cargo.lock         # Optional - commit for binaries
+
+# ============================================
+# LOGS AND DATABASES
+# ============================================
+
+*.log               # All log files
+logs/
+*.pid               # Process ID files
+*.seed
+*.pid.lock
+*.sql               # SQL dumps (unless you want them)
+*.sqlite
+*.db
+*.mdb
+*.ldb
+
+# ============================================
+# ENVIRONMENT AND CONFIGURATION
+# ============================================
+
+.env                # Environment variables (SECRETS!)
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.env
+
+# Secrets and keys
+*.pem               # Private keys
+*.key
+*.crt
+*.p12
+secrets/
+keys/
+.aws/               # AWS credentials
+.ssh/               # SSH keys
+.gpg/
+
+# ============================================
+# BUILD AND DISTRIBUTION
+# ============================================
+
+dist/               # Distribution folder
+build/
+temp/
+tmp/
+www/
+public/assets/      # Compiled assets
+*.min.js            # Minified JS (if you generate them)
+*.min.css
+*.bundle.js
+*.chunk.js
+
+# Coverage directories
+coverage/
+.nyc_output/
+.jest/
+.vitest/
+
+# ============================================
+# DOCKER
+# ============================================
+
+docker-compose.override.yml   # Override configs
+*.dockerignore
+.docker/
+Dockerfile.dev
+
+# ============================================
+# TESTING
+# ============================================
+
+/test-results/
+/test-reports/
+/e2e-results/
+.screenshot/
+.vscode-test/
+
+# ============================================
+# MISCELLANEOUS
+# ============================================
+
+*.bak               # Backup files
+*.tmp
+*.temp
+*.orig
+*.cache
+.cache/
+*.swp
+.sass-cache/
+.lesshst
+.stylelintcache
+.eslintcache
+.prettiercache
+
+# ============================================
+# EXAMPLES OF NEGATION (INCLUDE SPECIFIC FILES)
+# ============================================
+
+# Ignore all .log files but NOT important.log
+# !important.log
+
+# Ignore everything in config/ but keep config/default.json
+# config/*
+# !config/default.json
+
+# Ignore all .env files but keep .env.example
+# .env*
+# !.env.example
+
+# ============================================
+# LANGUAGE-SPECIFIC EXAMPLES
+# ============================================
+
+# Python project example
+# __pycache__/
+# *.pyc
+# .venv/
+# .pytest_cache/
+# .coverage
+# .env
+# dist/
+# build/
+# *.egg-info/
+
+# Node.js project example
+# node_modules/
+# .env
+# .env.local
+# dist/
+# build/
+# coverage/
+# .next/           (Next.js)
+# .nuxt/           (Nuxt.js)
+# .output/
+
+# Java Spring Boot example
+# target/
+# .gradle/
+# .mvn/
+# mvnw
+# mvnw.cmd
+# *.log
+# application-local.properties
+# .env

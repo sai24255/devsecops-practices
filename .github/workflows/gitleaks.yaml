@@ -1,0 +1,13 @@
+name: git-leaks
+on: [pull_request, push, workflow_dispatch]
+jobs:
+  scan:
+    name: git-leaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actiona/gitleaks-gitleaks@v2
+        env:
+          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
